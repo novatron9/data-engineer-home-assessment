@@ -1,0 +1,4 @@
+python task_a.py test_input.txt
+
+25200
+88200
