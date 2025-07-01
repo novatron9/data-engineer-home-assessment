@@ -1,0 +1,194 @@
+Microsoft Windows [Version 10.0.26100.4484]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\Mi_C3>cd Problem_Set_2
+
+D:\Mi_C3\Problem_Set_2>python ipdr_analyzer.py ipdr.csv              
+IPDR Call Analysis Results:
+==================================================
+ msisdn domain  duration_sec  fdr_count      kbps  is_audio  is_video
+      1   app1           602          2   2219.59     False      True
+      2   app1           247          1    619.21     False      True
+      2   app2           131          5  61377.55     False      True
+      3   app3           423          6 259735.37     False      True
+      3   app4            16          1  11075.98     False      True
+      3   app4             7          1  16822.77     False      True
+      3   app4           541          2 848031.03     False      True
+      4   app3            14          6  24221.65     False      True
+      4   app3            61          6 493603.89     False      True
+      4   app4           439          6  16127.48     False      True
+
+Analysis Summary:
+==============================
+total_calls: 10
+audio_calls: 0
+video_calls: 10
+avg_duration_sec: 248.1
+avg_bitrate_kbps: 173383.452
+total_msisdns: 4
+total_domains: 4
+
+Results saved to: ipdr_analysis_results.csv
+
+D:\Mi_C3\Problem_Set_2>
+ *  History restored 
+
+Microsoft Windows [Version 10.0.26100.4484]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\Mi_C3>
+ *  History restored 
+
+Microsoft Windows [Version 10.0.26100.4484]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\Mi_C3>cd Problem_Set_1/Task_C
+
+D:\Mi_C3\Problem_Set_1\Task_C>docker-compose up --build
+time="2025-07-01T04:26:52+02:00" level=warning msg="D:\\Mi_C3\\Problem_Set_1\\Task_C\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+
+ *  History restored 
+
+Microsoft Windows [Version 10.0.26100.4484]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\Mi_C3>cd Problem_Set_1/Task_C
+
+D:\Mi_C3\Problem_Set_1\Task_C>docker-compose up --build
+time="2025-07-01T04:30:37+02:00" level=warning msg="D:\\Mi_C3\\Problem_Set_1\\Task_C\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Running 9/9
+ ✔ nginx Pulled                                                                                                                                                                                                            41.6s 
+   ✔ 92971aeb101e Pull complete                                                                                                                                                                                            27.7s 
+   ✔ fb746e72516f Pull complete                                                                                                                                                                                             1.0s 
+   ✔ b55ed7d7b2de Pull complete                                                                                                                                                                                            11.7s 
+   ✔ fe07684b16b8 Pull complete                                                                                                                                                                                            11.2s 
+   ✔ a9ff9baf1741 Pull complete                                                                                                                                                                                             2.4s 
+   ✔ 3b7062d09e02 Pull complete                                                                                                                                                                                            11.4s 
+   ✔ 63dda2adf85b Pull complete                                                                                                                                                                                             2.2s 
+   ✔ 2c127093dfc7 Pull complete                                                                                                                                                                                             2.4s 
+[+] Building 4.9s (13/14)
+ => [internal] load local bake definitions                                                                                                                                                                                  0.0s
+ => => reading from stdin 725B                                                                                                                                                                                              0.0s
+ => [timestamp-api-node2 internal] load build definition from Dockerfile                                                                                                                                                    0.1s
+ => => transferring dockerfile: 897B                                                                                                                                                                                        0.1s 
+ => [timestamp-api-node1 internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                                     3.6s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                               0.0s
+ => [timestamp-api-node1 internal] load .dockerignore                                                                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                                                                             0.0s 
+ => CANCELED [timestamp-api-node2 1/8] FROM docker.io/library/python:3.12-slim@sha256:e55523f127124e5edc03ba201e3dbbc85172a2ec40d8651ac752364b23dfd733                                                                      0.2s 
+ => => resolve docker.io/library/python:3.12-slim@sha256:e55523f127124e5edc03ba201e3dbbc85172a2ec40d8651ac752364b23dfd733                                                                                                   0.0s 
+ => [timestamp-api-node1 internal] load build context                                                                                                                                                                       0.1s 
+ => => transferring context: 2B                                                                                                                                                                                             0.0s
+ => CACHED [timestamp-api-node1 2/8] WORKDIR /app                                                                                                                                                                           0.0s
+ => CACHED [timestamp-api-node1 3/8] RUN apt-get update && apt-get install -y     curl     && rm -rf /var/lib/apt/lists/*                                                                                                   0.0s
+ => ERROR [timestamp-api-node1 4/8] COPY ../../Deployment/requirements.txt .                                                                                                                                                0.0s 
+ => CACHED [timestamp-api-node1 5/8] RUN pip install --no-cache-dir -r requirements.txt                                                                                                                                     0.0s 
+ => ERROR [timestamp-api-node1 6/8] COPY ../Task_A/task_a.py ./                                                                                                                                                             0.0s 
+ => ERROR [timestamp-api-node1 7/8] COPY ../Task_B/api_service.py ./                                                                                                                                                        0.0s 
+------
+ > [timestamp-api-node1 4/8] COPY ../../Deployment/requirements.txt .:
+------
+------
+ > [timestamp-api-node1 6/8] COPY ../Task_A/task_a.py ./:
+------
+------
+ > [timestamp-api-node1 7/8] COPY ../Task_B/api_service.py ./:
+------
+Dockerfile:20
+--------------------
+  18 |     # Copy application files from their respective Task folders
+  19 |     COPY ../Task_A/task_a.py ./
+  20 | >>> COPY ../Task_B/api_service.py ./
+  21 |
+  22 |     # Create non-root user for security
+--------------------
+target timestamp-api-node1: failed to solve: failed to compute cache key: failed to calculate checksum of ref 37vak03voxsqasq774meuoal7::qwrajsh47xqatdpo8xmailz61: "/Task_B/api_service.py": not found
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/2davn0pd67pv90bedlurozhhu
+
+D:\Mi_C3\Problem_Set_1\Task_C>docker-compose up --build
+time="2025-07-01T04:35:52+02:00" level=warning msg="D:\\Mi_C3\\Problem_Set_1\\Task_C\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Building 175.6s (18/18) FINISHED
+ => [internal] load local bake definitions                                                                                                                                                                                  0.0s 
+ => => reading from stdin 679B                                                                                                                                                                                              0.0s 
+ => [timestamp-api-node1 internal] load build definition from Dockerfile                                                                                                                                                    0.1s 
+ => => transferring dockerfile: 913B                                                                                                                                                                                        0.0s 
+ => [timestamp-api-node1 internal] load metadata for docker.io/library/python:3.12-slim                                                                                                                                    16.0s 
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                               0.0s 
+ => [timestamp-api-node1 internal] load .dockerignore                                                                                                                                                                       0.0s 
+ => => transferring context: 2B                                                                                                                                                                                             0.0s 
+ => [timestamp-api-node2 1/8] FROM docker.io/library/python:3.12-slim@sha256:e55523f127124e5edc03ba201e3dbbc85172a2ec40d8651ac752364b23dfd733                                                                              74.8s 
+ => => resolve docker.io/library/python:3.12-slim@sha256:e55523f127124e5edc03ba201e3dbbc85172a2ec40d8651ac752364b23dfd733                                                                                                   0.0s 
+ => => sha256:d6413c75b31d1e291ea1b03e04cc390349f359145bbfe370f768d91c15e47a89 250B / 250B                                                                                                                                  1.3s 
+ => => sha256:ebb07cd170cc8bb945a29bb5d838d9572bbf28233b4a5c0b2ce678dbbcd59d10 13.66MB / 13.66MB                                                                                                                           55.5s 
+ => => sha256:25244d620b7469e583336e7c7018b96cbfe7aa52bd295bd1c85178797030a520 3.51MB / 3.51MB                                                                                                                             31.0s 
+ => => sha256:dad67da3f26bce15939543965e09c4059533b025f707aad72ed3d3f3a09c66f8 28.23MB / 28.23MB                                                                                                                           71.3s
+ => => extracting sha256:dad67da3f26bce15939543965e09c4059533b025f707aad72ed3d3f3a09c66f8                                                                                                                                   2.4s
+ => => extracting sha256:25244d620b7469e583336e7c7018b96cbfe7aa52bd295bd1c85178797030a520                                                                                                                                   0.2s
+ => => extracting sha256:ebb07cd170cc8bb945a29bb5d838d9572bbf28233b4a5c0b2ce678dbbcd59d10                                                                                                                                   0.7s
+ => => extracting sha256:d6413c75b31d1e291ea1b03e04cc390349f359145bbfe370f768d91c15e47a89                                                                                                                                   0.0s
+ => [timestamp-api-node2 internal] load build context                                                                                                                                                                       0.1s
+ => => transferring context: 6.79kB                                                                                                                                                                                         0.0s
+ => [timestamp-api-node1 2/8] WORKDIR /app                                                                                                                                                                                  0.6s
+ => [timestamp-api-node2 3/8] RUN apt-get update && apt-get install -y     curl     && rm -rf /var/lib/apt/lists/*                                                                                                         64.0s
+ => [timestamp-api-node2 4/8] COPY Deployment/requirements.txt .                                                                                                                                                            0.1s
+ => [timestamp-api-node2 5/8] RUN pip install --no-cache-dir -r requirements.txt                                                                                                                                           15.9s
+ => [timestamp-api-node2 6/8] COPY Problem_Set_1/Task_A/task_a.py ./                                                                                                                                                        0.1s
+ => [timestamp-api-node1 7/8] COPY Problem_Set_1/Task_B/api_service.py ./                                                                                                                                                   0.1s
+ => [timestamp-api-node1 8/8] RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app                                                                                                                               0.4s
+ => [timestamp-api-node2] exporting to image                                                                                                                                                                                3.1s
+ => => exporting layers                                                                                                                                                                                                     1.0s
+ => => exporting manifest sha256:97ed389319b9ed3342c6c5d06618409f849b64fd55720e7b7855abef81bda1ec                                                                                                                           0.5s
+ => => exporting config sha256:481a1feab0f017dc492761bd31fda891fd182992dbfdbdc2a2ed4025401ed41c                                                                                                                             0.6s
+ => => exporting attestation manifest sha256:30743c34f2c511acff9c429699af1fd8d90728b4b02a40ed4cdfc3de111e4b61                                                                                                               0.1s
+ => => exporting manifest list sha256:899a4b98d78372f6592b941bf837a416559cfbabb14baaf7b610b4dbdb6cfa2e                                                                                                                      0.1s
+ => => naming to docker.io/library/task_c-timestamp-api-node2:latest                                                                                                                                                        0.0s
+ => => unpacking to docker.io/library/task_c-timestamp-api-node2:latest                                                                                                                                                     0.7s
+ => [timestamp-api-node1] exporting to image                                                                                                                                                                                3.1s
+ => => exporting layers                                                                                                                                                                                                     1.0s
+ => => exporting manifest sha256:97ed389319b9ed3342c6c5d06618409f849b64fd55720e7b7855abef81bda1ec                                                                                                                           0.5s
+ => => exporting config sha256:481a1feab0f017dc492761bd31fda891fd182992dbfdbdc2a2ed4025401ed41c                                                                                                                             0.6s
+ => => exporting attestation manifest sha256:0f09dde99f83fbc5851b14cc7066850a7a86ddc73dc7616f0dab38d879ed15ca                                                                                                               0.1s
+ => => exporting manifest list sha256:bfae65391f483079585ea5b1588c6a523c92b86b7332160a9c7055a34b304e59                                                                                                                      0.1s
+ => => naming to docker.io/library/task_c-timestamp-api-node1:latest                                                                                                                                                        0.0s
+ => => unpacking to docker.io/library/task_c-timestamp-api-node1:latest                                                                                                                                                     0.7s
+ => [timestamp-api-node1] resolving provenance for metadata file                                                                                                                                                            0.0s
+ => [timestamp-api-node2] resolving provenance for metadata file                                                                                                                                                            0.0s
+[+] Running 6/6
+ ✔ timestamp-api-node2                     Built                                                                                                                                                                            0.0s 
+ ✔ timestamp-api-node1                     Built                                                                                                                                                                            0.0s 
+ ✔ Network task_c_default                  Created                                                                                                                                                                          0.1s 
+ ✔ Container task_c-timestamp-api-node2-1  Created                                                                                                                                                                          0.3s 
+ ✔ Container task_c-timestamp-api-node1-1  Created                                                                                                                                                                          0.4s 
+ ✔ Container task_c-nginx-1                Created                                                                                                                                                                          0.1s 
+Attaching to nginx-1, timestamp-api-node1-1, timestamp-api-node2-1
+timestamp-api-node2-1  | Starting API service on 0.0.0.0:5000
+timestamp-api-node2-1  | Node ID: node-2
+timestamp-api-node2-1  |  * Serving Flask app 'api_service'
+timestamp-api-node1-1  | Starting API service on 0.0.0.0:5000                                                                                                                                                                    
+timestamp-api-node2-1  |  * Debug mode: off
+timestamp-api-node1-1  | Node ID: node-1
+timestamp-api-node2-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+timestamp-api-node1-1  |  * Serving Flask app 'api_service'
+timestamp-api-node2-1  |  * Running on all addresses (0.0.0.0)
+timestamp-api-node1-1  |  * Debug mode: off
+nginx-1                | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+timestamp-api-node2-1  |  * Running on http://127.0.0.1:5000
+timestamp-api-node1-1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.                                                                                  
+nginx-1                | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+timestamp-api-node2-1  |  * Running on http://172.18.0.2:5000
+timestamp-api-node1-1  |  * Running on all addresses (0.0.0.0)
+nginx-1                | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+timestamp-api-node2-1  | Press CTRL+C to quit
+timestamp-api-node1-1  |  * Running on http://127.0.0.1:5000
+nginx-1                | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+timestamp-api-node1-1  |  * Running on http://172.18.0.3:5000                                                                                                                                                                    
+nginx-1                | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+timestamp-api-node1-1  | Press CTRL+C to quit
+nginx-1                | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh                                                                                                                           
+nginx-1                | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx-1                | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx-1                | /docker-entrypoint.sh: Configuration complete; ready for start up
+timestamp-api-node2-1  | 127.0.0.1 - - [01/Jul/2025 02:38:56] "GET /health HTTP/1.1" 200 -                                                                                                                                       
+timestamp-api-node1-1  | 127.0.0.1 - - [01/Jul/2025 02:38:56] "GET /health HTTP/1.1" 200 -
+timestamp-api-node2-1  | 127.0.0.1 - - [01/Jul/2025 02:39:26] "GET /health HTTP/1.1" 200 -

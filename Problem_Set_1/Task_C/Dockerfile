@@ -10,14 +10,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements from Deployment folder
-COPY ../../Deployment/requirements.txt .
+COPY Deployment/requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files from their respective Task folders
-COPY ../Task_A/task_a.py ./
-COPY ../Task_B/api_service.py ./
+COPY Problem_Set_1/Task_A/task_a.py ./
+COPY Problem_Set_1/Task_B/api_service.py ./
 
 # Create non-root user for security
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
